@@ -1,14 +1,27 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-03-02 19:00:00",
+  "exportTime": "2026-03-02 19:30:00",
   "containerVersion": {
-    "path": "accounts/000/containers/000/versions/0",
-    "accountId": "000",
-    "containerId": "000",
+    "path": "accounts/0/containers/0/versions/0",
+    "accountId": "0",
+    "containerId": "0",
     "container": {
-      "publicId": "GTM-TEMPLATE"
+      "publicId": "GTM-XXXXXX"
     },
     "tag": [
+      {
+        "name": "cHTML - Copy Listener",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\ndocument.addEventListener('copy', function(e) {\n  var selectedText = window.getSelection().toString();\n  if (selectedText) {\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push({\n      'event': 'textCopied',\n      'clipboardText': selectedText\n    });\n  }\n});\n</script>"
+          }
+        ],
+        "firingTriggerId": ["2147483647"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
       {
         "name": "GA4 - phone",
         "type": "gaawe",
@@ -44,7 +57,8 @@
       { "triggerId": "129", "name": "mailto.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "@" }] }] },
       { "triggerId": "130", "name": "phone.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "tel:" }] }] },
       { "triggerId": "131", "name": "phone.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "MATCH_REGEX", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "\\d{3} \\d{3} \\d{3}" }] }] },
-      { "triggerId": "132", "name": "mailto.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "mailto:" }] }] }
+      { "triggerId": "132", "name": "mailto.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "mailto:" }] }] },
+      { "triggerId": "2147483647", "name": "All Pages", "type": "PAGEVIEW" }
     ],
     "variable": [
       { "name": "v.ga4.measurementId", "type": "c", "parameter": [{ "type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX" }] },
