@@ -1,53 +1,60 @@
 {
-    "exportFormatVersion": 2,
-    "containerVersion": {
-        "tag": [
-            {
-                "name": "GA4 - phone",
-                "type": "gaawe",
-                "parameter": [
-                    {"type": "LIST", "key": "eventSettingsTable", "list": [
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "type"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{lookup - contact.type}}"}]},
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "click_text"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{Click Text}}"}]},
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "clipboardText"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{dl.clipboardText}}"}]}
-                    ]},
-                    {"type": "TEMPLATE", "key": "eventName", "value": "phone"},
-                    {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{v.ga4.measurementId}}"}
-                ],
-                "firingTriggerId": ["130", "131"],
-                "tagFiringOption": "ONCE_PER_EVENT"
-            },
-            {
-                "name": "GA4 - mailto",
-                "type": "gaawe",
-                "parameter": [
-                    {"type": "LIST", "key": "eventSettingsTable", "list": [
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "type"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{lookup - contact.type}}"}]},
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "click_text"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{Click Text}}"}]},
-                        {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "clipboardText"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{dl.clipboardText}}"}]}
-                    ]},
-                    {"type": "TEMPLATE", "key": "eventName", "value": "mailto"},
-                    {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{v.ga4.measurementId}}"}
-                ],
-                "firingTriggerId": ["129", "132"],
-                "tagFiringOption": "ONCE_PER_EVENT"
-            }
+  "exportFormatVersion": 2,
+  "exportTime": "2026-03-02 19:00:00",
+  "containerVersion": {
+    "path": "accounts/000/containers/000/versions/0",
+    "accountId": "000",
+    "containerId": "000",
+    "container": {
+      "publicId": "GTM-TEMPLATE"
+    },
+    "tag": [
+      {
+        "name": "GA4 - phone",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "LIST", "key": "eventSettingsTable", "list": [
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "type"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{lookup - contact.type}}"}]},
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "click_text"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{Click Text}}"}]},
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "clipboardText"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{dl.clipboardText}}"}]}
+          ]},
+          {"type": "TEMPLATE", "key": "eventName", "value": "phone"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{v.ga4.measurementId}}"}
         ],
-        "trigger": [
-            { "triggerId": "129", "name": "mailto.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "@" }] }] },
-            { "triggerId": "130", "name": "phone.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "tel:" }] }] },
-            { "triggerId": "131", "name": "phone.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "MATCH_REGEX", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "\\d{3} \\d{3} \\d{3}" }] }] },
-            { "triggerId": "132", "name": "mailto.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "mailto:" }] }] }
+        "firingTriggerId": ["130", "131"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "name": "GA4 - mailto",
+        "type": "gaawe",
+        "parameter": [
+          {"type": "LIST", "key": "eventSettingsTable", "list": [
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "type"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{lookup - contact.type}}"}]},
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "click_text"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{Click Text}}"}]},
+            {"type": "MAP", "map": [{"type": "TEMPLATE", "key": "parameter", "value": "clipboardText"}, {"type": "TEMPLATE", "key": "parameterValue", "value": "{{dl.clipboardText}}"}]}
+          ]},
+          {"type": "TEMPLATE", "key": "eventName", "value": "mailto"},
+          {"type": "TEMPLATE", "key": "measurementIdOverride", "value": "{{v.ga4.measurementId}}"}
         ],
-        "variable": [
-            { "name": "v.ga4.measurementId", "type": "c", "parameter": [{ "type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX" }] },
-            { "name": "lookup - contact.type", "type": "smm", "parameter": [{ "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "input", "value": "{{Event}}" }, { "type": "LIST", "key": "map", "list": [{ "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "key", "value": "textCopied" }, { "type": "TEMPLATE", "key": "value", "value": "copy" }] }, { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "key", "value": "gtm.linkClick" }, { "type": "TEMPLATE", "key": "value", "value": "click" }] }] }] },
-            { "name": "dl.clipboardText", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "clipboardText" }] }
-        ],
-        "builtInVariable": [
-            { "type": "EVENT", "name": "Event" },
-            { "type": "CLICK_URL", "name": "Click URL" },
-            { "type": "CLICK_TEXT", "name": "Click Text" }
-        ]
-    }
+        "firingTriggerId": ["129", "132"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      { "triggerId": "129", "name": "mailto.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "@" }] }] },
+      { "triggerId": "130", "name": "phone.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "tel:" }] }] },
+      { "triggerId": "131", "name": "phone.copy", "type": "CUSTOM_EVENT", "customEventFilter": [{ "type": "EQUALS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "textCopied" }] }], "filter": [{ "type": "MATCH_REGEX", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{dl.clipboardText}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "\\d{3} \\d{3} \\d{3}" }] }] },
+      { "triggerId": "132", "name": "mailto.click", "type": "LINK_CLICK", "filter": [{ "type": "CONTAINS", "parameter": [{ "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" }, { "type": "TEMPLATE", "key": "arg1", "value": "mailto:" }] }] }
+    ],
+    "variable": [
+      { "name": "v.ga4.measurementId", "type": "c", "parameter": [{ "type": "TEMPLATE", "key": "value", "value": "G-XXXXXXXXXX" }] },
+      { "name": "lookup - contact.type", "type": "smm", "parameter": [{ "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "input", "value": "{{Event}}" }, { "type": "LIST", "key": "map", "list": [{ "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "key", "value": "textCopied" }, { "type": "TEMPLATE", "key": "value", "value": "copy" }] }, { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "key", "value": "gtm.linkClick" }, { "type": "TEMPLATE", "key": "value", "value": "click" }] }] }] },
+      { "name": "dl.clipboardText", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "clipboardText" }] }
+    ],
+    "builtInVariable": [
+      { "type": "EVENT", "name": "Event" },
+      { "type": "CLICK_URL", "name": "Click URL" },
+      { "type": "CLICK_TEXT", "name": "Click Text" }
+    ]
+  }
 }
